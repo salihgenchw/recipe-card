@@ -1,26 +1,30 @@
 import "./App.css";
 import Card from "./components/Card/Card";
-import food from "./assets/food.jpg"; // Tell webpack this JS file uses this image
 
 function App() {
   const recipeAuthor = "Kodluyoruz";
   const recipeItem = {
-    title: "Avokado Ezmeli Taco",
-    date: "12 Ocak 2021, Salı",
-    image: food,
+    title: "Çiğ Börek",
+    date: "26 Nisan 2021, Pazartesi",
+    image: "https://img.acunn.com/foto/1200x675/uploads/icerikler/2020/11/23/cigborek-tarifi12576668535fbbea763d84b.jpg",
     description:
-      "Bu kremsi ve baharatlı avokado sosu, günlük taco'larınızı hazırlamak için harika seçeneklerden biri. Geleneksel olarak flautas veya taquitos ile servis edilir, ancak bazı vegan enchiladalara da harika bir katkı sağlar.",
+      "Çiğ börek, kıyma, soğan ve baharat karışımının açılmış yufkaya konulup yağda kızartılmasıyla yapılan geleneksel bir Kırım Tatar yemeğidir.",
   };
 
   const likeCount = 193;
-  const isLiked = false;
+  const isLiked = true;
 
   return (
     <div className="App">
       <header className="App-header">
         <Card
-          /* prop ismi = { değişken } */
+          title={recipeItem.title}
+          date= {recipeItem.date}
+          image = {recipeItem.image}
+          description = {recipeItem.description}
           author={recipeAuthor}
+          likeCount = {likeCount}
+          isLiked = {isLiked}
         />
       </header>
     </div>
